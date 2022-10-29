@@ -1,8 +1,24 @@
-import React from 'react'
+import { Todos } from "../Model"
+import "./style.css"
 
-const TodoList = () => {
+
+
+interface Props{
+    todos: Todos[],
+    setTodos:React.Dispatch<React.SetStateAction<Todos[]>>
+
+}
+
+
+const TodoList = ({todos, setTodos}: Props) => {
   return (
-    <div>TodoList</div>
+    <div className="todo">
+        {
+            todos.map((todo) =>(
+                <li>{todo.todo}</li>
+            ))
+        }
+    </div>
   )
 }
 

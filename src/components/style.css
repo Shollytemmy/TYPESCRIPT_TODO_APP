@@ -17,7 +17,7 @@
 }
 
 .input__box:focus{
-    box-shadow: 0 0 10px 100px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.5);
     outline: none;
 }
 
@@ -37,7 +37,7 @@
     cursor: pointer;
 }
 
-.input__submit:focus{
+.input__submit:hover{
     background-color: #388ae2;
 
 }
@@ -45,4 +45,13 @@
 .input__submit:active{
     transform: scale(0.8);
     box-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+/*Todo style*/
+
+.todo{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    flex-wrap: wrap;
 }
