@@ -1,5 +1,6 @@
 import { Todos } from "../Model"
 import "./style.css"
+import TodoCard from "./TodoCard"
 
 
 
@@ -15,7 +16,12 @@ const TodoList = ({todos, setTodos}: Props) => {
     <div className="todo">
         {
             todos.map((todo) =>(
-                <li>{todo.todo}</li>
+                <TodoCard
+                key={todo.id}
+                todo={todo}
+                setTodos = {setTodos}
+                todos = {todos}
+                 />
             ))
         }
     </div>

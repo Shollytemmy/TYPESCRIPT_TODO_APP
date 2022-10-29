@@ -32,7 +32,7 @@
     font-size: 15px;
     background-color: #2f74c0;
     color: rgb(255, 255, 255);
-    transition: 0.2s all;
+    transition: 0.5s all;
     box-shadow: 0 0 10px #000;
     cursor: pointer;
 }
@@ -54,4 +54,50 @@
     justify-content: space-evenly;
     width: 90%;
     flex-wrap: wrap;
+}
+
+.todos__card{
+    display: flex;
+    width: 29.5%;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
+}
+
+.card__text{
+    flex: 1;
+    padding-top: 5px;
+    font-size: 20px;
+    /* border: 1px solid red; */
+    text-transform: capitalize;
+}
+
+
+.icon{
+    margin-left: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/*media query for Todos*/
+
+@media (max-width: 1200px){
+    .todos__card{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .input{
+        width: 95%;
+    }
+
+    .todo{
+        width: 95%;
+    }
+    .todos__card {
+      width: 100%;
+    }
+    
 }
