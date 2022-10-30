@@ -12,6 +12,7 @@ type Props = {
 
 
 const TodoCard = ({todo, setTodos, todos}: Props) => {
+
   const [edit, setEdit] = useState<boolean>(false)
   const [editTodo, setEditTodo] = useState<string>(todo.todo)
 
@@ -26,13 +27,24 @@ const TodoCard = ({todo, setTodos, todos}: Props) => {
 
   }
 
-  
+  const handleEdit = (e:React.FormEvent, id: number) => {
+
+    e.preventDefault()
+
+    setTodos(todos.map((todo) => {
+      return (
+        todo.id === id ? {...todo, todo: editTodo} : todo
+      )
+    }))
+
+    setEdit(false)
+  }
   return (
     <form className="todos__card" onSubmit={(e) => handleEdit(e, todo.id)}>
 
       {
         edit ? (
-          <input type="text" value={editTodo} onChange={(e) => setEditTodo(e.target.value)} className='card__input'/>
+          <input type="text" value={editTodo} onChange={(e) => setEditTodo(e.target.value)} className='todos__text'/>
         ) : (
           <span className="card__text" style={todo.completed ? {textDecoration: "line-through"}: undefined}>{todo.todo}</span>
 

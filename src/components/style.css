@@ -73,6 +73,9 @@
     text-transform: capitalize;
 }
 
+.todos__text:focus{
+    outline: none;
+}
 
 .icon{
     margin-left: 10px;
