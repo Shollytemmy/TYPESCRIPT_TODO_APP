@@ -20,6 +20,8 @@ const TodoCard = ({todo, setTodos, todos}: Props) => {
 
   const handleDelete = (id: number) =>{
 
+    setTodos(todos.filter((todo) => todo.id !== id))
+
   }
   return (
     <form className="todos__card">
@@ -28,7 +30,7 @@ const TodoCard = ({todo, setTodos, todos}: Props) => {
         <div>
             <span className="icon">{<AiFillEdit />}</span>
             <span className="icon" onClick={() => handleDone(todo.id)}>{<MdDone />}</span>
-            <span className="icon">{<AiFillDelete />}</span>
+            <span className="icon" onClick={() => handleDelete(todo.id)}>{<AiFillDelete />}</span>
         </div>
     </form>
   )
